@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CoffePlace</title>
+    <link rel="stylesheet" id="theme_link"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="docs.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark sexo fixed-top">
+        <a href="#" class="navbar-brand"><img
+                src="/static/img/coffee-place-logo-shop-design-template-retro-emblem-vector-art-51775353.jpg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="puntoventa" class="nav-link">Punto de Venta</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Administrador</a>
+                    <div class="dropdown-menu">
+                        <a href="usuarios" class="dropdown-item">Usuarios</a>
+                        <a href="materias_primas" class="dropdown-item">Materias_Primas</a>
+                        <a href="proveedores" class="dropdown-item">Proveedores</a>
+                        <a href="productos" class="dropdown-item">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="salir" class="nav-link">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="content-banner">
+            <p>Café Delicioso</p>
+            <h2>100% Natural <br />Café Fresco</h2>
+            <a href="puntoventa">Comprar ahora</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+
+        <section class="container top-categories">
+            <h1 class="heading-1">Mejores Categorías</h1>
+            <div class="container-categories">
+                <div class="card-category category-moca">
+                    <p>Café moca</p>
+                    <span>Ver más</span>
+                </div>
+                <div class="card-category category-expreso">
+                    <p>Expreso Americano</p>
+                    <span>Ver más</span>
+                </div>
+                <div class="card-category category-capuchino">
+                    <p>Capuchino</p>
+                    <span>Ver más</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container top-products">
+            <h1 class="heading-1">Mejores Productos</h1>
+
+            <div class="container-options">
+                <span class="active">Destacados</span>
+                <span>Más recientes</span>
+                <span>Mejores Vendidos</span>
+            </div>
+
+            <div class="container-products">
+                <!-- Producto 1 -->
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/img/frappe.jpg" alt="Frappe" />
+                        <span class="discount">-10%</span>
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Frappe</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$54 <span>$60</span></p>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/img/bubble.jpg" alt="bubba.jpg" />
+                        <span class="discount">-20%</span>
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Bubbles</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$48 <span>$60</span></p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/img/cafe-capuccino.jpg" alt="cafe-capuccino" />
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h3>Capuccino</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$69</p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/img/Cafe-Latte.jpg" alt="Cafe-Latte" />
+                        <div class="button-group">
+                            <span>
+                                <i class="fa-regular fa-eye"></i>
+                            </span>
+                            <span>
+                                <i class="fa-regular fa-heart"></i>
+                            </span>
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="content-card-product">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3>Cafe Helado</h3>
+                        <span class="add-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </span>
+                        <p class="price">$45</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="galeria">
+            <img src="/static/img/galeria1.jpg" alt="Galeria Img1" class="galeria-img-1" /><img
+                src="/static/img/galeria2.jpg" alt="Galeria Img2" class="galeria-img-2" /><img
+                src="/static/img/galeria3.jpg" alt="Galeria Img3" class="galeria-img-3" /><img
+                src="/static/img/galeria4.jpg" alt="Galeria Img4" class="galeria-img-4" /><img
+                src="/static/img/galeria5.jpg" alt="Galeria Img5" class="galeria-img-5" />
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">Información de Contacto</p>
+                    <ul>
+                        <li>
+                            Dirección: Argentina #18, Arandas Jalisco
+                            47184
+                        </li>
+                        <li>Teléfono: 348-141-4321</li>
+                        <li>EmaiL: CoffeePlace@gmail.com</li>
+                    </ul>
+                    <div class="social-icons">
+                        <span class="facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </span>
+                        <span class="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </span>
+                        <span class="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="information">
+                    <p class="title-footer">Información</p>
+                    <ul>
+                        <li><a href="#">Acerca de Nosotros</a></li>
+                        <li><a href="#">Información Delivery</a></li>
+                        <li><a href="#">Politicas de Privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Contactános</a></li>
+                    </ul>
+                </div>
+
+                <div class="my-account">
+                    <p class="title-footer">Mi cuenta</p>
+
+                    <ul>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Punto de venta</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>
+                    Desarrollado por Brayan Moises Felix Aguirre &copy; 2023
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

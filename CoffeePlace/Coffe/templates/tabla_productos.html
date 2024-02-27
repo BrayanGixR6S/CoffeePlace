@@ -1,0 +1,13 @@
+
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.1 }}</td>
+                <td>{{ producto.2 }}</td>
+                <td>{{ producto.3 }}</td>
+                <td>
+                    <a href="/puntoventa/agregar/carrito/{{producto.0}}" class="btn btn-success btn-delete btn-agregar">Agregar</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        

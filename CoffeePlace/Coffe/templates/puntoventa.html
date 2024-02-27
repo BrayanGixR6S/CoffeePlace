@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>CoffePlace</title>
+	<link rel="stylesheet" id="theme_link"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css" />
+	<link rel="stylesheet" href="/static/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="docs.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="/static/sweetalert.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark sexo fixed-top">
+		<a href="escritorio" class="navbar-brand"><img
+				src="/static/img/coffee-place-logo-shop-design-template-retro-emblem-vector-art-51775353.jpg"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+			aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a href="puntoventa" class="nav-link">Punto de Venta</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">Administrador</a>
+					<div class="dropdown-menu">
+						<a href="usuarios" class="dropdown-item">Usuarios</a>
+						<a href="materias_primas" class="dropdown-item">Materias_Primas</a>
+						<a href="proveedores" class="dropdown-item">Proveedores</a>
+						<a href="productos" class="dropdown-item">Productos</a>
+				</li>
+				<li class="nav-item">
+                    <a href="salir" class="nav-link">Salir</a>
+                </li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<hr>
+				<div class="row">
+					<div class="col-md-10">
+						<div class="row">
+							<div class="form-group col-md-1 text-center">
+								<b>Proveedor</b>
+							</div>
+							<div class="form-group col-md-8 text-center">
+								<input list="datosClientes" name="" autocomplete="off" class="form-control"
+									id="clientes" placeholder="Buscar">
+								<datalist id="datosClientes" active>
+								</datalist>
+							</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col-md-8 mt-4">
+								<b for="tipo">Busqueda</b>
+								<input list="datosProductos" autocomplete="off" name="" class="form-control"
+									id="Productos" placeholder="Buscar Productos" autocomplete>
+								<datalist id="datosProductos" class="col-md-9" active style="width:1000px;">
+								</datalist>
+							</div>
+						</div>
+						<div class="row mt-3">
+							<div class="col-sm-12">
+								<table class="table table-sm table-hover" width="90%">
+									<thead>
+										<tr style="background-color:#2e353d; color:#FFF;">
+											<td width="200" class="text-center">Producto</td>
+											<td class="text-center">Descripcion</td>
+											<td width="200" class="text-center">Costo</td>
+											<td width="80">&nbsp;</td>
+										</tr>
+									</thead>
+									<tbody id="tablaProductos">
+
+
+
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="row ">
+
+							<div class="col-sm-12">
+								<h2>Detalle de venta</h2>
+								<table class="table table-sm table-hover" width="90%">
+									<thead>
+										<tr style="background-color:#2e353d; color:#FFF;">
+											<td width="100" class="text-center">Cantidad</td>
+											<td width="200" class="text-center">Producto</td>
+											<td class="text-center">Descripcion</td>
+											<td width="200" class="text-center">Costo</td>
+											<td width="200" class="text-center">Importe</td>
+											<td width="80">&nbsp;</td>
+										</tr>
+									</thead>
+									<tbody id="tablaCarrito">
+
+
+
+
+									</tbody>
+								</table>
+							</div>
+							<a href="/puntoventa/finalizar-venta" class="btn btn-primary">Finalizar Compra</a>
+						</div>
+						<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+						<script>
+							cargarTabla();
+							cargarCarrito();
+
+							var escribiendoTemporizador;
+							$('#Productos').on('keyup', function () {
+								clearTimeout(escribiendoTemporizador);
+								escribiendoTemporizador = setTimeout(function () {
+									cargarTabla();
+								}, 1000); // Esperar 1 segundo después de que el usuario deja de escribir
+							});
+
+							function cargarTabla() {
+								$.ajax({
+									url: '/consulta/producto',
+									method: 'POST',
+									data: {
+										busqueda: $("#Productos").val(),
+									},
+									success: function (response) {
+										$("#tablaProductos").html(response)
+									},
+									error: function (jqXHR, textStatus, errorThrown) {
+										console.log(textStatus, errorThrown);
+									}
+								});
+							}
+
+							function cargarCarrito() {
+								$.ajax({
+									url: '/consulta/carrito',
+									method: 'POST',
+									data: {},
+									success: function (response) {
+										$("#tablaCarrito").html(response)
+									},
+									error: function (jqXHR, textStatus, errorThrown) {
+										console.log(textStatus, errorThrown);
+									}
+								});
+							}
+						</script>
+						{% with messages = get_flashed_messages(with_categories=true) %}
+						{% if messages %}
+						{% for category, message in messages %}
+						<script>
+
+							Swal.fire({
+
+								title: "{{ message }}",
+								// success , error , warning ,info
+
+
+								icon: "{{ category }}"
+								// success , error , warning ,info
+
+							})
+
+						</script>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
+
+</body>
+
+
+</html>

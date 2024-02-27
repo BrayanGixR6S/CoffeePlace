@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body %}{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <script>
+
+            Swal.fire({
+
+                title: "{{ message }}",
+                // success , error , warning ,info
+
+
+                icon: "{{ category }}"
+                // success , error , warning ,info
+
+            })
+
+        </script>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+<p class="titulo">Materias_Primas</p>
+<div class="row">
+    <div class="col-md-5">
+        
+        <div class="card card-body">
+            <form action="{{url_for('materiasprimas')}}" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="descripcion" placeholder="descripcion">
+                </div>
+                <input type="text" class="form-control" name="precio" placeholder="precio">
+                <div class="form-group">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Save
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <table class="table table-striped table-hover table-bordered table-sm bg-white">
+            <thead>
+                <tr>
+                    <td>Nombre Materia Prima</td>
+                    <td>Descripcion</td>
+                    <td>Precio</td>
+                    <td>Operations</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for materias_primas in materiasprimas %}
+                <tr>
+                    <td>{{ materias_primas.1 }}</td>
+                    <td>{{ materias_primas.2 }}</td>
+                    <td>{{ materias_primas.3 }}</td>
+                    <td>
+                        <a href="materiasprimas/edit/{{materias_primas.0}}" class="btn btn-secondary">Editar</a>
+                        <a materiaid="{{materias_primas.0}}" class="btn btn-danger  btn-delete btn-eliminar1">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </script>
+    </div>
+</div>
+</div>
+
+{% endblock %}

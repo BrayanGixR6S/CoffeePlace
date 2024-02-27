@@ -1,0 +1,24 @@
+
+{% for producto in productos %}
+<tr>
+    <td>{{ producto.cantidad }}</td>
+    <td>{{ producto.nombre }}</td>
+    <td>{{ producto.descripcion }}</td>
+    <td>{{ producto.precio }}</td>
+    <td>{{ producto.importe }}</td>
+    <td id="box2">
+        <a href="/puntoventa/disminuye/carrito/{{producto.id}}" class="btn btn-warning">-</a>
+        <a href="/puntoventa/aumenta/carrito/{{producto.id}}" class="btn btn-success">+</a>
+        <a href="/puntoventa/eliminar/carrito/{{producto.id}}" class="btn btn-danger">Eliminar</a>
+    </td>
+</tr>
+{% endfor %}
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>  
+    <td>{{ total }}</td>
+</tr>
+
+        

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ticket de venta</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+			color: #333;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.logo {
+			display: block;
+			margin: 0 auto 20px;
+			max-width: 200px;
+			height: auto;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+
+		th,
+		td {
+			padding: 8px;
+			border: 1px solid #ccc;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		.total {
+			text-align: right;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<img class="logo" src="/static/img/coffee-place-logo-shop-design-template-retro-emblem-vector-art-51775353.jpg"
+			alt="Logo de la empresa">
+		<h1>Ticket de venta {{ folio }}</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Producto</th>
+					<th>Descripcion</th>
+					<th>Cantidad</th>
+					<th>Costo</th>
+					<th>Importe</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for producto in productos %}
+				<tr>
+					<td>{{ producto.0 }}</td>
+					<td>{{ producto.1 }}</td>
+					<td>{{ producto.2 }}</td>
+					<td>${{ producto.3 }}</td>
+					<td>${{ producto.2 * producto.3 }}</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="total"><strong>Total:</strong> ${{ total }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
